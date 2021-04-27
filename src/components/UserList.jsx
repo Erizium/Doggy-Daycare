@@ -26,21 +26,18 @@ const UserList = () => {
         setInputString(event.target.value)  
     }
 
-
-
-    
         useEffect(() => {
 
-            //const string = "husky";
-            let dogs = dogJson.filter(dog => dog.breed === inputString)
+            let dogs = dogJson.filter(dog =>  dog.chipNumber === inputString ||
+                 dog.owner.name === inputString || dog.owner.lastName === inputString || dog.name === inputString)
     
             console.log(dogs)
     
             const info = dogs.map((item) => (
                 <div id="container">
                     <div id="infos">
-                        <img src={item.img} id="dogImg"></img>
-                        <div id="dogInformation">
+                        <img src={item.img} class="dogImg"></img>
+                        <div class="dogInformation">
                             <div>
                                 <div>Name: {item.name}</div>
                                 <div>Gender: {item.sex}</div>
@@ -67,9 +64,10 @@ const UserList = () => {
      
     return(
         <div className="data">
+            <h4 id="searchTitle">Search for your dog</h4>
             <div id="input">
-                <input type="text" placeholder="breed" name="breed" id="searchbar" onChange={hej}></input>
-                <button onClick={hej}>Search</button>
+                <input type="text" placeholder="Name, owner or chip"
+                 name="breed" id="searchbar" onChange={hej}></input>
             </div>
             {dogElements}
         </div>

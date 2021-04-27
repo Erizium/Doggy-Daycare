@@ -5,12 +5,13 @@
   }
 
   #input {
-    display: flex;
+    display: grid;
     margin: 20px;
     justify-content: center;
+
   }
   
-  #dogImg {
+  .dogImg {
     height: 100px;
     padding: 10px;
   }
@@ -20,7 +21,7 @@
     grid-template-columns: 0.3fr 1fr;
   }
   
-  #dogInformation {
+  .dogInformation {
     display: flex;
     font-size: 15px;
     border: 1px solid black;
@@ -29,20 +30,24 @@
     padding: 10px;
   }
   
-  #dogInformation div:nth-child(1){
+  .dogInformation div:nth-child(1){
     display: flex;
     flex-direction: row;
   }
   
-  #dogInformation div:nth-child(1) div {
+  .dogInformation div:nth-child(1) div {
     padding-right: 10px;
   }
   
-  #dogInformation div:nth-child(3) {
+  .dogInformation div:nth-child(3) {
     display: flex;
     flex-direction: row;
   }
   
-  #dogInformation div:nth-child(3) div {
+  .dogInformation div:nth-child(3) div {
     padding-right: 10px;
+  }
+
+  #searchTitle {
+    text-align: center;
   }

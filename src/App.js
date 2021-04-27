@@ -12,8 +12,8 @@ const {useState, useEffect} = React;
 
 // git add .  läga till allt redigerat
 // git commit -m "commit namn"
-//git push
- 
+// git push
+
 function App() {  
 
   return (
