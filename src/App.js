@@ -10,7 +10,10 @@ const {useState, useEffect} = React;
 
 //https://api.jsonbin.io/b/607eb43024143e5df089b745
 
-
+// git add .  läga till allt redigerat
+// git commit -m "commit namn"
+//git push
+ 
 function App() {  
 
   return (
