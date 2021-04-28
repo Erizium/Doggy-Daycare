@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import './components/DogInformation.css';
 import React from 'react';

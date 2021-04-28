@@ -35,7 +35,7 @@ const UserList = () => {
 
                 const info1 = dogJson.map((item) => (
                         <div id="infos">
-                                <img src={item.img} class="dogImg"></img>
+                                <img src={item.img} className="dogImg"></img>
                                 <div>
                                     <div>{item.name}</div>
                                     <div>Chip Nr: {item.chipNumber}</div>
@@ -53,7 +53,7 @@ const UserList = () => {
                const info2 = dogs.map((item) => (
                    
                        <div id="infos">
-                            <img src={item.img} class="dogImg"></img>
+                            <img src={item.img} className="dogImg"></img>
                                 <div id="shortInfo">
                                     <div>{item.name}</div>
                                     <div>Chip Nr: {item.chipNumber}</div>
@@ -86,21 +86,20 @@ const UserList = () => {
             }
         }, [dogJson, inputString])
 
-
-        function showAllInformation() {
-            console.log("hej")
+        function dogMoreInformation() {
+            console.log("Dog click")
         }
-
      
     return(
         <div id="blur">
             <div className="data">
-                <h4 id="searchTitle">Search for your dog</h4>
+                <h2 id="searchTitle">Search for your family member</h2>
                 <div id="input">
                     <input type="text" placeholder="Name, owner or chipNr"
                     name="breed" id="searchbar" onChange={hej}></input>
                 </div>
-                <div id="dogElements" onClick={showAllInformation}>
+                {/* onClick för att visa mer information om hund */}
+                <div id="dogElements" onClick={dogMoreInformation}>
                     {dogElements}
                 </div>
                 
