@@ -11,7 +11,7 @@
   justify-content: center;
   align-content: center;
   text-decoration:solid;
-  color: black;
+  color: white;
 }
 
 #welcomeText > div > div:nth-child(1) {
@@ -28,5 +28,13 @@
   margin: 20px;
   font-size: 12px;
   text-align: center;
+}
+
+#welcomeBg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(3px);
 }
 

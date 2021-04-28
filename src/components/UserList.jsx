@@ -28,49 +28,84 @@ const UserList = () => {
 
         useEffect(() => {
 
-            let dogs = dogJson.filter(dog =>  dog.chipNumber === inputString ||
-                 dog.owner.name === inputString || dog.owner.lastName === inputString || dog.name === inputString)
-    
-            console.log(dogs)
-    
-            const info = dogs.map((item) => (
-                <div id="container">
-                    <div id="infos">
-                        <img src={item.img} class="dogImg"></img>
-                        <div class="dogInformation">
-                            <div>
-                                <div>Name: {item.name}</div>
-                                <div>Gender: {item.sex}</div>
-                                <div>Age: {item.age}</div>
-                                <div>Breed: {item.breed}</div>
-                            </div>
-                            <div>
-                                <div>ChipNumber: {item.chipNumber}</div>
-                            </div>
-                            <div>
-                                <div>Owner: {item.owner.name} {item.owner.lastName}</div>
-                                <div>Phonenumber: {item.owner.phoneNumber}</div>
-                            </div>
+            if(inputString === "") {
+                console.log("hej")
+
+                const info1 = dogJson.map((item) => (
+                        <div id="infos">
+                            <div>{item.name}</div>
+                            <img src={item.img} class="dogImg"></img>
+                            
+                            
+                            
+                            
+                            {/* <div class="dogInformation">
+                                <div>
+                                    <div>Name: {item.name}</div>
+                                    <div>Gender: {item.sex}</div>
+                                    <div>Age: {item.age}</div>
+                                    <div>Breed: {item.breed}</div>
+                                </div>
+                                <div>
+                                    <div>ChipNumber: {item.chipNumber}</div>
+                                </div>
+                                <div>
+                                    <div>Owner: {item.owner.name} {item.owner.lastName}</div>
+                                    <div>Phonenumber: {item.owner.phoneNumber}</div>
+                                </div>
+                            </div>  */}
                         </div>  
-                    </div>
-                </div>
-            ))
-            setDogElements(info);
-    
+                ))
+                setDogElements(info1);
+            } else {
+                let dogs = dogJson.filter(dog =>  dog.chipNumber === inputString ||
+                    dog.owner.name === inputString || dog.owner.lastName === inputString || dog.name === inputString)
+       
+               console.log(dogs)
+       
+               const info2 = dogs.map((item) => (
+                   
+                       <div id="infos">
+                           <img src={item.img} class="dogImg"></img>
+                           <div class="dogInformation">
+                               <div>
+                                   <div>Name: {item.name}</div>
+                                   <div>Gender: {item.sex}</div>
+                                   <div>Age: {item.age}</div>
+                                   <div>Breed: {item.breed}</div>
+                               </div>
+                               <div>
+                                   <div>ChipNumber: {item.chipNumber}</div>
+                               </div>
+                               <div>
+                                   <div>Owner: {item.owner.name} {item.owner.lastName}</div>
+                                   <div>Phonenumber: {item.owner.phoneNumber}</div>
+                               </div>
+                           </div>  
+                       </div>
+                   
+                ))
+                
+                setDogElements(info2);
+            
+            }
         }, [dogJson, inputString])
 
 
 
      
     return(
-        <div className="data">
-            <h4 id="searchTitle">Search for your dog</h4>
-            <div id="input">
-                <input type="text" placeholder="Name, owner or chip"
-                 name="breed" id="searchbar" onChange={hej}></input>
+        <div id="blur">
+            <div className="data">
+                <h4 id="searchTitle">Search for your dog</h4>
+                <div id="input">
+                    <input type="text" placeholder="Name, owner or chipNr"
+                    name="breed" id="searchbar" onChange={hej}></input>
+                </div>
+                {dogElements}
             </div>
-            {dogElements}
         </div>
+       
     )
 
 }

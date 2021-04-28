@@ -2,6 +2,15 @@
 
   #container {
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .data {
+  }
+
+  #blur {
+    
   }
 
   #input {
@@ -12,13 +21,18 @@
   }
   
   .dogImg {
-    height: 100px;
     padding: 10px;
+    
   }
   
   #infos {
-    display: grid;
-    grid-template-columns: 0.3fr 1fr;
+    width: 100px;
+    border: 1px solid black;
+    display: inline-flex;
+    flex-direction: column;
+    object-fit: contain;
+    margin: 2px;
+    text-align: center;
   }
   
   .dogInformation {
