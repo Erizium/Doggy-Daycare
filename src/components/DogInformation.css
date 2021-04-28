@@ -7,32 +7,51 @@
   }
 
   .data {
+    padding: 10px;
   }
 
   #blur {
     
   }
 
+  #dogElements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+
   #input {
     display: grid;
     margin: 20px;
     justify-content: center;
-
   }
   
   .dogImg {
     padding: 10px;
-    
+    max-width:100%;
+    max-height:100%;
+    object-fit: cover;
+    border-radius: 15px;
   }
   
   #infos {
-    width: 100px;
+    display: flex;
     border: 1px solid black;
-    display: inline-flex;
-    flex-direction: column;
-    object-fit: contain;
+    flex-direction: row;
     margin: 2px;
+    height: 100px;
+    border-radius: 2px;
+    justify-content: center;
+  }
+
+  #infoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  #infos div:nth-child(1) {
     text-align: center;
+    padding-top: 20px;
   }
   
   .dogInformation {

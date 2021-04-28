@@ -27,37 +27,24 @@ const UserList = () => {
     }
 
         useEffect(() => {
-
+            //showing all
             if(inputString === "") {
                 console.log("hej")
 
+                //on click, förstora bild med mer information, blurra bakgrunden
+
                 const info1 = dogJson.map((item) => (
                         <div id="infos">
-                            <div>{item.name}</div>
-                            <img src={item.img} class="dogImg"></img>
-                            
-                            
-                            
-                            
-                            {/* <div class="dogInformation">
+                                <img src={item.img} class="dogImg"></img>
                                 <div>
-                                    <div>Name: {item.name}</div>
-                                    <div>Gender: {item.sex}</div>
-                                    <div>Age: {item.age}</div>
-                                    <div>Breed: {item.breed}</div>
+                                    <div>{item.name}</div>
+                                    <div>Chip Nr: {item.chipNumber}</div>
                                 </div>
-                                <div>
-                                    <div>ChipNumber: {item.chipNumber}</div>
-                                </div>
-                                <div>
-                                    <div>Owner: {item.owner.name} {item.owner.lastName}</div>
-                                    <div>Phonenumber: {item.owner.phoneNumber}</div>
-                                </div>
-                            </div>  */}
                         </div>  
                 ))
                 setDogElements(info1);
             } else {
+                //search
                 let dogs = dogJson.filter(dog =>  dog.chipNumber === inputString ||
                     dog.owner.name === inputString || dog.owner.lastName === inputString || dog.name === inputString)
        
@@ -66,6 +53,14 @@ const UserList = () => {
                const info2 = dogs.map((item) => (
                    
                        <div id="infos">
+                            <img src={item.img} class="dogImg"></img>
+                                <div id="shortInfo">
+                                    <div>{item.name}</div>
+                                    <div>Chip Nr: {item.chipNumber}</div>
+                                </div>
+                           
+                            
+{/* 
                            <img src={item.img} class="dogImg"></img>
                            <div class="dogInformation">
                                <div>
@@ -81,7 +76,7 @@ const UserList = () => {
                                    <div>Owner: {item.owner.name} {item.owner.lastName}</div>
                                    <div>Phonenumber: {item.owner.phoneNumber}</div>
                                </div>
-                           </div>  
+                           </div>   */}
                        </div>
                    
                 ))
@@ -92,6 +87,9 @@ const UserList = () => {
         }, [dogJson, inputString])
 
 
+        function showAllInformation() {
+            console.log("hej")
+        }
 
      
     return(
@@ -102,7 +100,10 @@ const UserList = () => {
                     <input type="text" placeholder="Name, owner or chipNr"
                     name="breed" id="searchbar" onChange={hej}></input>
                 </div>
-                {dogElements}
+                <div id="dogElements" onClick={showAllInformation}>
+                    {dogElements}
+                </div>
+                
             </div>
         </div>
        
