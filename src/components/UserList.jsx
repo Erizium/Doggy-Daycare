@@ -60,12 +60,12 @@ const UserList = () => {
        
                const info2 = dogs.map((item) => (
                    
-                       <div id="infos">
+                        <div id="infos" onClick={() => dogMoreInformation(item)}>
                             <img src={item.img} className="dogImg"></img>
-                                <div id="shortInfo">
-                                    <div>{item.name}</div>
-                                    <div>Chip Nr: {item.chipNumber}</div>
-                                </div>
+                            <div>
+                                <div>{item.name}</div>
+                                <div>Chip Nr: {item.chipNumber}</div>
+                            </div>
                            
                          
 {/* 
@@ -99,11 +99,14 @@ const UserList = () => {
     return(
         <div id="blur">
             <div className="data">
-                <h2 id="searchTitle">Search for your family member</h2>
-                <div id="input">
-                    <input type="text" placeholder="Name, owner or chipNr"
-                    name="breed" id="searchbar" onChange={hej}></input>
+                <div id="searchDiv">
+                    <h2 id="searchTitle">Search for your family member</h2>
+                    <div id="input">
+                        <input type="text" placeholder="Name, owner or chipNr"
+                        name="breed" id="searchbar" onChange={hej}></input>
+                    </div>
                 </div>
+                
                 {/* onClick för att visa mer information om hund */}
                 <div id="dogElements" >
                     {dogElements}
