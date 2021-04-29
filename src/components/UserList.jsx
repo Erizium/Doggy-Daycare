@@ -26,15 +26,23 @@ const UserList = () => {
         setInputString(event.target.value)  
     }
 
+    function dogMoreInformation(item) {
+        console.log(item)
+        return (
+            <div class="bigImg">
+                <div class="bigDogImg">{item.img}</div>
+
+            </div>
+        )
+    }    
+
         useEffect(() => {
             //showing all
             if(inputString === "") {
-                console.log("hej")
 
                 //on click, förstora bild med mer information, blurra bakgrunden
-
                 const info1 = dogJson.map((item) => (
-                        <div id="infos">
+                        <div id="infos" onClick={() => dogMoreInformation(item)}>
                                 <img src={item.img} className="dogImg"></img>
                                 <div>
                                     <div>{item.name}</div>
@@ -59,7 +67,7 @@ const UserList = () => {
                                     <div>Chip Nr: {item.chipNumber}</div>
                                 </div>
                            
-                            
+                         
 {/* 
                            <img src={item.img} class="dogImg"></img>
                            <div class="dogInformation">
@@ -80,15 +88,13 @@ const UserList = () => {
                        </div>
                    
                 ))
-                
                 setDogElements(info2);
-            
             }
         }, [dogJson, inputString])
 
-        function dogMoreInformation() {
-            console.log("Dog click")
-        }
+        
+
+       
      
     return(
         <div id="blur">
@@ -99,10 +105,9 @@ const UserList = () => {
                     name="breed" id="searchbar" onChange={hej}></input>
                 </div>
                 {/* onClick för att visa mer information om hund */}
-                <div id="dogElements" onClick={dogMoreInformation}>
+                <div id="dogElements" >
                     {dogElements}
-                </div>
-                
+                </div>    
             </div>
         </div>
        
