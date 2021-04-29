@@ -4,9 +4,9 @@ import img from '../img/dogFlex.jpg';
 
 const Welcome = () => {
     return (
-        
-        <Link to="/doginformations" style={{textDecoration: 'none'}}>
-            <img src={img} alt="dogFlex" id="welcomeBg"/>
+
+        <Link to="/doginformations" style={{ textDecoration: 'none' }}>
+            <img src={img} alt="dogFlex" id="welcomeBg" />
             <div id="welcomeText">
                 <div>
                     <div>Welcome to</div>
@@ -14,7 +14,7 @@ const Welcome = () => {
                     <div>Click anywhere to continue</div>
                 </div>
             </div>
-        </Link> 
+        </Link>
     )
 }
 

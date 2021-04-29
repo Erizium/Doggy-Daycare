@@ -37,10 +37,20 @@
     border-radius: 15px;
   }
 
-  .bigImg {
+  .moreDogInformation {
+    display: flex;
     position: absolute;
-    z-index: 999;
+    height: 200px;
+    width: 200px;
+    color: red;
   }
+
+  .moreDogInformation > img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  
   
   #infos {
     display: flex;
