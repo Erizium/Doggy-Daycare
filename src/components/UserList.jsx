@@ -60,27 +60,7 @@ const UserList = () => {
                         <div>{item.name}</div>
                         <div>Chip Nr: {item.chipNumber}</div>
                     </div>
-
-
-                    {/* 
-                           <img src={item.img} class="dogImg"></img>
-                           <div class="dogInformation">
-                               <div>
-                                   <div>Name: {item.name}</div>
-                                   <div>Gender: {item.sex}</div>
-                                   <div>Age: {item.age}</div>
-                                   <div>Breed: {item.breed}</div>
-                               </div>
-                               <div>
-                                   <div>ChipNumber: {item.chipNumber}</div>
-                               </div>
-                               <div>
-                                   <div>Owner: {item.owner.name} {item.owner.lastName}</div>
-                                   <div>Phonenumber: {item.owner.phoneNumber}</div>
-                               </div>
-                           </div>   */}
                 </div>
-
             ))
             setDogElements(info2);
         }
@@ -99,30 +79,44 @@ const UserList = () => {
         present = <div>{bigImg.present}</div>
     }
     return (
-        <div id="blur">
-            <div className="moreDogInformation">
-                {img}
-                <div>
-                    {dogName}
+        
+    
+        <div className="data">      
+
+            <div className="moreDogInformationContainer">
+                <div id="dogInfo1">
+                    {img}
                     <div>
-                        
+                        <div>{dogName}</div>
+                        <div id="moreInfo">
+                            <div id="moreDiv1">
+                                <div>Age: {age}</div>
+                                <div>Breed: {breed}</div>
+                                <div>Chip Nr: {chipNumber}</div>
+                                <div>Owner: {owner}</div>
+                                <div>Phone: {phonenumber}</div>
+                            </div>
+                            <div id="moreDiv2">
+                                <div>Gender: {gender}</div>
+                                <div>Present: Yes</div>
+                            </div>
+                        </div>
                     </div>
-                </div> 
+                </div>   
             </div>
 
-            <div className="data">
-                <div id="searchDiv">
-                    <h2 id="searchTitle">Search for your family member</h2>
-                    <div id="input">
-                        <input type="text" placeholder="Name, owner or chipNr"
-                            name="breed" id="searchbar" onChange={getInputString}></input>
-                    </div>
-                </div>
-                <div id="dogElements" >
-                    {dogElements}
+            <div id="searchDiv">
+                <h2 id="searchTitle">Search for your family member</h2>
+                <div id="input">
+                    <input type="text" placeholder="Name, owner or chipNr"
+                        name="breed" id="searchbar" onChange={getInputString}></input>
                 </div>
             </div>
+            <div id="dogElements" >
+                {dogElements}
+            </div>
         </div>
+        
 
     )
 

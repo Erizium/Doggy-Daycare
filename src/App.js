@@ -1,5 +1,6 @@
 import './App.css';
 import './components/DogInformation.css';
+import './components/LargeDogCard.css'
 import React from 'react';
 import UserList from './components/UserList';
 import Welcome from './components/Welcome';

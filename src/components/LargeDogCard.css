@@ -1,0 +1,106 @@
+.moreDogInformationContainer {
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -100px;
+    border: 1px solid red;
+    padding: 10px;
+    background-color: #282c34;
+  }
+
+  #dogInfo1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 250px;
+    width: 600px;
+    z-index: 10;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  #dogInfo1 > img {
+    height: 250px;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  #moreInfo {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 40px;
+    row-gap: 5px;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+  }
+
+  #moreDiv1 {
+      display: grid;
+      grid-template-rows: auto;
+  }
+
+  #moreDiv1 div:nth-child(1) {
+      display: flex;
+      flex-direction: start;
+      gap: 5px;
+  }
+
+  #moreDiv1 div:nth-child(2) {
+    display: flex;
+    flex-direction: start;
+    gap: 5px;
+}
+
+#moreDiv1 div:nth-child(3) {
+    display: flex;
+    flex-direction: start;
+    gap: 5px;
+}
+
+#moreDiv1 div:nth-child(4) {
+    display: flex;
+    flex-direction: start;
+    gap: 5px;
+}
+
+
+#moreDiv1 div:nth-child(5) {
+    display: flex;
+    flex-direction: start;
+    gap: 5px;
+}
+
+
+#moreDiv2 {
+    display: grid;
+    grid-template-rows: auto;
+}
+
+#moreDiv2 div:nth-child(1) {
+    display: flex;
+    flex-direction: start;
+    gap: 5px;
+}
+
+#moreDiv2 div:nth-child(2) {
+    display: flex;
+    flex-direction: start;
+    gap: 5px;
+    padding-bottom: 60px;
+}
+
+
+.blurry {
+    -webkit-filter: blur(3px);
+    height: 100vh;
+}
+
+
+
+  #blur {
+     /* -webkit-filter: blur(3px);
+     z-index: 9; */
+   }
