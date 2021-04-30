@@ -80,7 +80,7 @@ const UserList = () => {
             age = <div>{bigImg.age} year old</div>
         }
         gender = <div>{bigImg.sex.charAt(0).toUpperCase() + bigImg.sex.slice(1)}</div>
-        breed = <div>{bigImg.breed}</div>
+        breed = <div>{bigImg.breed.charAt(0).toUpperCase() + bigImg.breed.slice(1)}</div>
         chipNumber = <div>Chip Nr: {bigImg.chipNumber}</div>
         owner = <div>Owner: {bigImg.owner.name} {bigImg.owner.lastName}</div>
         phonenumber = <div>Phone: {bigImg.owner.phoneNumber}</div>
@@ -101,7 +101,7 @@ const UserList = () => {
                 <div id="dogInfo1">
                     {img}
                     <div>
-                        <div>{dogName}</div>
+                        <div id="dogName">{dogName}</div>
                         <div id="moreInfo">
                             <div id="moreDiv1">
                                 <div>{age}</div>
@@ -111,6 +111,7 @@ const UserList = () => {
                             </div>
                             <div id="moreDiv2">
                                 <div>{gender}</div>
+                                <div>{breed}</div>
                                 <div>Status: {present}</div>
                             </div>
                         </div>

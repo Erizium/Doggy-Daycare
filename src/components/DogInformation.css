@@ -1,102 +1,97 @@
+#container {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: lightblue;
+}
 
+.data {
+  padding: 10px;
+  background-color: lightblue;
+  height: 100vh;
+}
 
-  #container {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: lightblue;
-  }
+#dogElements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
-  .data {
-    padding: 10px;
-    background-color: lightblue;
-    height: 100vh;
-  }
+#input {
+  display: grid;
+  margin: 20px;
+  justify-content: center;
+}
 
+.dogImg {
+  padding: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
 
-  #dogElements {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
+#infos {
+  display: flex;
+  border: 1px solid black;
+  flex-direction: row;
+  margin: 2px;
+  height: 100px;
+  border-radius: 5px;
+  justify-content: center;
+  color: white;
+  background-color: #282c34;
+  border: 2px solid black;
+}
 
-  #input {
-    display: grid;
-    margin: 20px;
-    justify-content: center;
-  }
-  
-  .dogImg {
-    padding: 10px;
-    max-width:100%;
-    max-height:100%;
-    object-fit: cover;
-    border-radius: 15px;
-  }
+#infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr)
+}
 
-  #infos {
-    display: flex;
-    border: 1px solid black;
-    flex-direction: row;
-    margin: 2px;
-    height: 100px;
-    border-radius: 5px;
-    justify-content: center;
-    color: white;
-    background-color: #282c34;
-    border: 2px solid black;
-  }
+#infos div:nth-child(1) {
+  text-align: center;
+  padding-top: 20px;
+}
 
-  #infoGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr)
-  }
+.dogInformation {
+  display: flex;
+  font-size: 15px;
+  border: 1px solid black;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
 
-  #infos div:nth-child(1) {
-    text-align: center;
-    padding-top: 20px;
-  }
-  
-  .dogInformation {
-    display: flex;
-    font-size: 15px;
-    border: 1px solid black;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-  }
-  
-  .dogInformation div:nth-child(1){
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .dogInformation div:nth-child(1) div {
-    padding-right: 10px;
-  }
-  
-  .dogInformation div:nth-child(3) {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .dogInformation div:nth-child(3) div {
-    padding-right: 10px;
-  }
+.dogInformation div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+}
 
-  #searchTitle {
-    text-align: center;
-    color: white;
-  }
+.dogInformation div:nth-child(1) div {
+  padding-right: 10px;
+}
 
-  #searchDiv {
-    background-color: #282c34;
-    padding: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 3px solid black;
-  }
+.dogInformation div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+}
 
+.dogInformation div:nth-child(3) div {
+  padding-right: 10px;
+}
+
+#searchTitle {
+  text-align: center;
+  color: white;
+}
+
+#searchDiv {
+  background-color: #282c34;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 3px solid black;
+}
 
 @media (max-width: 870px) {
   #dogElements {
