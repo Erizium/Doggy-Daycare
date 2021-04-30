@@ -8,7 +8,6 @@ const UserList = () => {
     const [bigImg, setBigImg] = useState(null)
     const [inputString, setInputString] = useState("")
 
-
     useEffect(async () => {
 
         let response = await fetch("https://api.jsonbin.io/b/6087cce85210f622be3ae8c9");
@@ -28,8 +27,8 @@ const UserList = () => {
 
     function dogMoreInformation(item) {
         console.log(item)
-        //state variable item eller null
         setBigImg(item)
+        console.log("hej")
     }
 
     useEffect(() => {
@@ -66,60 +65,73 @@ const UserList = () => {
         }
     }, [dogJson, inputString])
 
+
     let img, dogName, age, breed, gender, chipNumber, owner, phonenumber, present = null
-    if(bigImg != null) {
+    let classNameContainer = "moreDogInformationContainer";
+    let blurClass = "blur";
+
+    if (bigImg != null) {
+
         img = <img src={bigImg.img} className="largeImg"></img>
         dogName = <div>{bigImg.name}</div>
-        age = <div>{bigImg.age}</div>
-        gender = <div>{bigImg.sex}</div>
+        if (bigImg.age >= 2) {
+            age = <div>{bigImg.age} years old</div>
+        } else {
+            age = <div>{bigImg.age} year old</div>
+        }
+        gender = <div>{bigImg.sex.charAt(0).toUpperCase() + bigImg.sex.slice(1)}</div>
         breed = <div>{bigImg.breed}</div>
-        chipNumber = <div>{bigImg.chipNumber}</div>
-        owner = <div>{bigImg.owner.name} {bigImg.owner.lastName}</div>
-        phonenumber = <div>{bigImg.owner.phoneNumber}</div>
-        present = <div>{bigImg.present}</div>
-    }
-    return (
-        
-    
-        <div className="data">      
+        chipNumber = <div>Chip Nr: {bigImg.chipNumber}</div>
+        owner = <div>Owner: {bigImg.owner.name} {bigImg.owner.lastName}</div>
+        phonenumber = <div>Phone: {bigImg.owner.phoneNumber}</div>
 
-            <div className="moreDogInformationContainer">
+        if (bigImg.present === true) {
+            present = <div>Inside</div>
+        } else {
+            present = <div>Away</div>
+        }
+    } else {
+        classNameContainer = "moreDogInformationContainer hide";
+        blurClass = ""
+    }
+
+    return (
+        <div className="data">
+            <div className={classNameContainer} onClick={() => setBigImg(null)}>
                 <div id="dogInfo1">
                     {img}
                     <div>
                         <div>{dogName}</div>
                         <div id="moreInfo">
                             <div id="moreDiv1">
-                                <div>Age: {age}</div>
-                                <div>Breed: {breed}</div>
-                                <div>Chip Nr: {chipNumber}</div>
-                                <div>Owner: {owner}</div>
-                                <div>Phone: {phonenumber}</div>
+                                <div>{age}</div>
+                                <div>{chipNumber}</div>
+                                <div>{owner}</div>
+                                <div>{phonenumber}</div>
                             </div>
                             <div id="moreDiv2">
-                                <div>Gender: {gender}</div>
-                                <div>Present: Yes</div>
+                                <div>{gender}</div>
+                                <div>Status: {present}</div>
                             </div>
                         </div>
                     </div>
-                </div>   
-            </div>
-
-            <div id="searchDiv">
-                <h2 id="searchTitle">Search for your family member</h2>
-                <div id="input">
-                    <input type="text" placeholder="Name, owner or chipNr"
-                        name="breed" id="searchbar" onChange={getInputString}></input>
                 </div>
             </div>
-            <div id="dogElements" >
-                {dogElements}
+
+            <div className={blurClass}>
+                <div id="searchDiv">
+                    <h2 id="searchTitle">Search for your family member</h2>
+                    <div id="input">
+                        <input type="text" placeholder="Name, owner or chipNr"
+                            name="breed" id="searchbar" onChange={getInputString}></input>
+                    </div>
+                </div>
+                <div id="dogElements" >
+                    {dogElements}
+                </div>
             </div>
         </div>
-        
-
     )
-
 }
 
 export default UserList;
